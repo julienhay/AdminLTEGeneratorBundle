@@ -1,6 +1,6 @@
 {{ "{% form_theme form 'AdminLTEGeneratorBundle:widget:fields.html.twig' %}" }}
 <button type="button" class="btn {{ "{{ app.session.get('filter." ~ entity|lower ~ "') ? 'btn-warning' : 'btn-default' }}" }} btn-sm" data-toggle="modal" data-target="#filterModal">
-	<i class="fa fa-filter"></i> Filtros
+	<i class="fa fa-filter"></i> Filters
 </button>
 
 <div class="modal" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel">
@@ -8,7 +8,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        		<h4 class="modal-title" id="myModalLabel">Filtros de búqueda <small>Aplique uno o más filtros</small></h4>
+        		<h4 class="modal-title" id="myModalLabel">Search filters <small>Apply one or more filters</small></h4>
       		</div>
 		<div class="modal-body">
 			<div id="filter" >
@@ -18,9 +18,9 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-       		<button class="btn btn-primary btn-sm btn-flat" type="submit" name="submit-filter"><i class="fa fa-filter"></i> Filtrar</button>
-        	<a class="btn btn-default btn-sm btn-flat" href="?reset-filter"><i class="fa fa-eraser"></i> Quitar filtros</a>
-        	<button type="button" class="btn btn-default btn-sm btn-flat" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+       		<button class="btn btn-primary btn-sm btn-flat" type="submit" name="submit-filter"><i class="fa fa-filter"></i> Filter</button>
+        	<a class="btn btn-default btn-sm btn-flat" href="?reset-filter"><i class="fa fa-eraser"></i> Clear</a>
+        	<button type="button" class="btn btn-default btn-sm btn-flat" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
       </div>
 		</form>
     </div>

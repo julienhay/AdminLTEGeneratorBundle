@@ -28,7 +28,7 @@
 					<div class="box-tools">
 					{{ "{% include '"~ route_name_prefix ~"/filter.html.twig' with {form: form} %}" }}	
 					{% if 'new' in actions -%}			    
-						<a href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+						<a href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
 					{%- endif %}
 					</div>
             	</div>            
@@ -38,7 +38,7 @@
 						{%- for field, metadata in fields %}		                
 		                	<th>{{ "{{ thead('" ~ entity|lower ~"', '"~ field ~"', '"~ field|replace({'_': ' '})|capitalize ~"') }}" }}</th>
 		            	{%- endfor %}
-		                <th>Acciones</th>
+		                <th>Actions</th>
 		            	</tr>              
 						{{ '{% for ' ~ entity_singularized ~ ' in pagination %}' }}
 				        <tr>
@@ -65,7 +65,7 @@
 
 				            {%- elseif metadata.type in ['boolean'] %}
 
-				                <td>{{ '{% if ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' %}<span class="label label-success">Si</span>{% else %}<span class="label label-danger">No</span>{% endif %}' }}</td>
+				                <td>{{ '{% if ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' %}<span class="label label-success">Yes</span>{% else %}<span class="label label-danger">No</span>{% endif %}' }}</td>
 
 				            {%- else %}
 
@@ -80,11 +80,11 @@
 				                		{%- for action in record_actions %}
 				                			{% if action == 'edit' %}
 				                				{% set iconBtn = 'fa-edit' %}		
-				                				{% set textBtn = 'Editar' %}                					
+				                				{% set textBtn = 'Edit' %}                					
 				                			{% endif %}		                 
 				                			{% if action == 'show' %}
 				                				{% set iconBtn = 'fa-eye' %}		
-				                				{% set textBtn = 'Ver' %}                	                					
+				                				{% set textBtn = 'Show' %}                	                					
 				                			{% endif %}		                       
 				                            <a class="btn btn-default btn-sm btn-flat" href="{{ "{{ path('" ~ route_name_prefix ~ "_" ~ action ~ "', { 'id': " ~ entity_singularized ~ "."~ identifier ~" }) }}" }}"><i class="fa {{iconBtn}}"></i>&nbsp;{{ textBtn }}</a>		                        
 				                    {%- endfor %}
@@ -101,7 +101,7 @@
 		           </div>            
 
 		            <div class="box-footer clearfix">
-						<a href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+						<a href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}" class="btn btn-default btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
 		            	{{ '{{ knp_pagination_render(pagination) }}' }}		              
 		            </div>		           
 			</div>
